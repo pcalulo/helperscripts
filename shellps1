@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Red Hat-style shell prompt
+export PS1="[\u@\h \W]\\$ "
+
