@@ -1,0 +1,31 @@
+#!/bin/sh
+
+################################################################################
+# HELPER SCRIPT FOR RUNNING MUMBLE
+#
+# == Why is this necessary? ==
+# It appears that the version of libcelt that ships with Ubuntu does not
+# understand the version that ships with Arch. When an Arch user enters a
+# Mumble server, the people running Ubuntu suddenly stop hearing anything.
+#
+# To fix this, compile libcelt from source like so:
+# ./configure --prefix=/opt
+# make
+# sudo make install
+#
+# (this script expects the self-compiled library files to be in /opt/)
+#
+# == Where do I put this file? ==
+# Put this script in ~/bin/ then log out and log back in. The relogging is
+# required to put ~/bin/ into your session's $PATH. This means that the
+# Mumble icon invokes this script, instead of the Mumble executable.
+################################################################################
+
+# Prioritize our own libraries over the ones that ship with Ubuntu
+export LD_LIBRARY_PATH=/opt/lib:$LD_LIBRARY_PATH
+
+# Run the Mumble binary. The full path must be specified; otherwise, the
+# script will just call itself over and over again, using up all PIDs and
+# having the system grind to a halt.
+/usr/bin/mumble
+
