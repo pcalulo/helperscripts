@@ -4,9 +4,7 @@ set textwidth=80
 " This section is from:
 " http://stackoverflow.com/questions/1523482/vimrc-configuration-for-python
 set nohlsearch
-set ai
 set bg=dark
-set showmatch
 highlight SpecialKey ctermfg=DarkGray
 set listchars=tab:>-,trail:~
 set list
