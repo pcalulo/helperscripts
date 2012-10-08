@@ -1,0 +1,11 @@
+#!/bin/bash
+
+grep "LID" /proc/acpi/wakeup | grep "disabled" > /dev/null
+LID_SLEEP_ENABLED=$?
+
+# If it's enabled, toggle the setting
+if [ $LID_SLEEP_ENABLED -ne 0 ]
+then
+    echo "LID" > /proc/acpi/wakeup
+fi
+
