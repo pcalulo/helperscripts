@@ -43,3 +43,6 @@ autocmd vimenter * if !argc() | NERDTree | endif
 " For closing Vim when only the NERDTree window is open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
+filetype plugin on
+set ofu=syntaxcomplete#Complete
+
