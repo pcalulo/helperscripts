@@ -1,0 +1,10 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "editor.renderWhitespace": "boundary",
+    "editor.detectIndentation": true,
+    "editor.fontSize": 12,
+    "editor.rulers": [
+        80
+    ],
+    "files.insertFinalNewline": true
+}
